@@ -5,7 +5,7 @@ services:
     env_file: .env
     restart: always
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - /portainer/linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
     env_file: .env
     platform: linux/x86_64
@@ -14,8 +14,8 @@ services:
     restart: always
     build: .
     ports:
-      - 3000:3000
+      - 3005:3005
     volumes:
-      - ./data:/data/data
+      - /portainer/linkwarden/data:/data/data
     depends_on:
       - postgres
