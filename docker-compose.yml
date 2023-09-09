@@ -1,8 +1,7 @@
-version: "3"
+version: "3.5"
 services:
   postgres:
     image: postgres
-    restart: always
     volumes:
       - /portainer/linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
