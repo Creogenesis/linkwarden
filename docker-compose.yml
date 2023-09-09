@@ -7,7 +7,9 @@ services:
   linkwarden:
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
-    build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile
     ports:
       - 3005:3005
     volumes:
