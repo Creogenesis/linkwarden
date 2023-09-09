@@ -2,12 +2,10 @@ version: "3.5"
 services:
   postgres:
     image: postgres
-    env_file: .env
     restart: always
     volumes:
       - /portainer/linkwarden/pgdata:/var/lib/postgresql/data
   linkwarden:
-    env_file: .env
     environment:
       - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
     restart: always
